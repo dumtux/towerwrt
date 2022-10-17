@@ -24,6 +24,18 @@
 			label = "amber:system";
 			gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
 		};
+
+		eth0_led0: link {
+			label = "omega2p:green:link";
+			gpios = <&gpio 42 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+		};
+
+		eth0_led1: data {
+			label = "omega2p:orange:data";
+			gpios = <&gpio 43 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+		};
 	};
 
 	keys {
