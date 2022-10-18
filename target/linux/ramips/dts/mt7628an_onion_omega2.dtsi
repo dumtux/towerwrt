@@ -2,6 +2,7 @@
 
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
+#include <dt-bindings/interrupt-controller/irq.h>
 
 / {
 	compatible = "onion,omega2", "mediatek,mt7628an-soc";
@@ -22,7 +23,32 @@
 
 		led_system: system {
 			label = "amber:system";
-			gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio 44 GPIO_ACTIVE_HIGH>;
+		};
+		eth0_led0: eth0link {
+			label = "omega2p:eth0:green:link";
+			gpios = <&gpio 42 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+		};
+		eth0_led1: eth0data {
+			label = "omega2p:eth0:orange:data";
+			gpios = <&gpio 43 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+		};
+		eth1_led0: eth1link {
+			label = "omega2p:eth1:green:link";
+			gpios = <&gpio 39 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+		};
+		eth1_led1: eth1data {
+			label = "omega2p:eth1:orange:data";
+			gpios = <&gpio 40 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+		};
+		led_main_proc: main_proc {
+			label = "omega2p:main_proc";
+			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
+			default-state = "off";
 		};
 	};
 
@@ -35,6 +61,7 @@
 			linux,code = <KEY_RESTART>;
 		};
 	};
+
 };
 
 &state_default {
@@ -130,12 +157,13 @@
 		};
 	};
 
-	spidev@1 {
-		#address-cells = <1>;
-		#size-cells = <1>;
-		compatible = "linux,spidev";
+	can0: can@1 {
+		compatible = "microchip,mcp2515";
 		reg = <1>;
-		spi-max-frequency = <40000000>;
+        spi-max-frequency = <5000000>;
+        clock-frequency  =  <20000000>;
+		interrupt-parent = <&gpio>;
+		interrupts = <11 IRQ_TYPE_LEVEL_LOW>;
 	};
 };
 
@@ -156,10 +184,10 @@
 	nvmem-cell-names = "mac-address";
 };
 
-&sdhci {
+/*&sdhci {
 	status = "okay";
 	mediatek,cd-low;
-};
+};*/
 
 &wmac {
 	status = "okay";
