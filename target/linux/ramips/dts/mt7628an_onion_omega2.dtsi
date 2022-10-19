@@ -45,11 +45,11 @@
 			gpios = <&gpio 40 GPIO_ACTIVE_LOW>;
 			default-state = "off";
 		};
-		led_main_proc: main_proc {
-			label = "main_proc";
-			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
-			default-state = "off";
-		};
+		// led_main_proc: main_proc {
+		// 	label = "main_proc";
+		// 	gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
+		// 	default-state = "off";
+		// };
 	};
 
 	keys {
