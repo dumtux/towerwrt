@@ -26,27 +26,27 @@
 			gpios = <&gpio 44 GPIO_ACTIVE_HIGH>;
 		};
 		eth0_led0: eth0link {
-			label = "omega2p:eth0:green:link";
+			label = "green:link";
 			gpios = <&gpio 42 GPIO_ACTIVE_LOW>;
 			default-state = "off";
 		};
 		eth0_led1: eth0data {
-			label = "omega2p:eth0:orange:data";
+			label = "orange:data";
 			gpios = <&gpio 43 GPIO_ACTIVE_LOW>;
 			default-state = "off";
 		};
 		eth1_led0: eth1link {
-			label = "omega2p:eth1:green:link";
+			label = "eth1:green:link";
 			gpios = <&gpio 39 GPIO_ACTIVE_LOW>;
 			default-state = "off";
 		};
 		eth1_led1: eth1data {
-			label = "omega2p:eth1:orange:data";
+			label = "eth1:orange:data";
 			gpios = <&gpio 40 GPIO_ACTIVE_LOW>;
 			default-state = "off";
 		};
 		led_main_proc: main_proc {
-			label = "omega2p:main_proc";
+			label = "main_proc";
 			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
 			default-state = "off";
 		};
