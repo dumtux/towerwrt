@@ -25,26 +25,6 @@
 			label = "amber:system";
 			gpios = <&gpio 44 GPIO_ACTIVE_HIGH>;
 		};
-		eth0_led0: eth0link {
-			label = "green:link";
-			gpios = <&gpio 42 GPIO_ACTIVE_LOW>;
-			default-state = "off";
-		};
-		eth0_led1: eth0data {
-			label = "orange:data";
-			gpios = <&gpio 43 GPIO_ACTIVE_LOW>;
-			default-state = "off";
-		};
-		eth1_led0: eth1link {
-			label = "eth1:green:link";
-			gpios = <&gpio 39 GPIO_ACTIVE_LOW>;
-			default-state = "off";
-		};
-		eth1_led1: eth1data {
-			label = "eth1:orange:data";
-			gpios = <&gpio 40 GPIO_ACTIVE_LOW>;
-			default-state = "off";
-		};
 		// led_main_proc: main_proc {
 		// 	label = "main_proc";
 		// 	gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
