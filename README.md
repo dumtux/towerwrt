@@ -14,13 +14,22 @@
 
 TowerWrt is just another fork of OpenWrt, customized as little as possible for future upgrades.
 
-Customization:
+### What are customized
+
 * modified device tree file `target/linux/ramips/dts/mt7628an_onion_omega2.dtsi`
 * modified feeds source file `feeds.conf.default`, to point [towerwrt-packages](https://github.com/dumtux/towerwrt-packages)
 * modified kernel config file `target/linux/ramips/mt76x8/config-5.10`
 * added build config file `.config`, originally ignored from git, but included for easier future bulding
 * added custom banner file `files/etc/banner`, for the ASCII-Art logo
 * , and this README file is edited, of course!
+
+### How to build
+
+* clone this repository.
+* checkout `omega2` branch.
+* run `./scripts/feeds update -a` and `./scripts/feeds install -a`
+* make menuconfig to sync with the `.config` file
+* run `make`
 
 ---
 
