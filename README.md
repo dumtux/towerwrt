@@ -12,6 +12,20 @@
  -----------------------------------------------------
 </code></pre>
 
+TowerWrt is just another fork of OpenWrt, customized as little as possible for future upgrades.
+
+Customization:
+* modified device tree file `target/linux/ramips/dts/mt7628an_onion_omega2.dtsi`
+* modified feeds source file `feeds.conf.default`, to point [towerwrt-packages](https://github.com/dumtux/towerwrt-packages)
+* modified kernel config file `target/linux/ramips/mt76x8/config-5.10`
+* added build config file `.config`, originally ignored from git, but included for easier future bulding
+* added custom banner file `files/etc/banner`, for the ASCII-Art logo
+* , and this README file is edited, of course!
+
+---
+
+## (original README contents of OpenWrt)
+
 ![OpenWrt logo](include/logo.png)
 
 OpenWrt Project is a Linux operating system targeting embedded devices. Instead
