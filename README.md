@@ -1,4 +1,4 @@
-# TowerWrt
+# TowerWrt - A customized fork of OpenWrt for TowerController III
 
 <pre><code>
 ████████╗ ██████╗ ██╗    ██╗███████╗██████╗ ██╗    ██╗██████╗ ████████╗
