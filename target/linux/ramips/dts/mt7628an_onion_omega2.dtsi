@@ -25,11 +25,26 @@
 			label = "amber:system";
 			gpios = <&gpio 44 GPIO_ACTIVE_HIGH>;
 		};
-		// led_main_proc: main_proc {
-		// 	label = "main_proc";
-		// 	gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
-		// 	default-state = "off";
-		// };
+		led_main_proc: main_proc {
+			label = "main_proc";
+			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
+			default-state = "off";
+		};
+		led_uhf_prog: uhf_prog {
+			label = "uhf_prog";
+			gpios = <&gpio 1 GPIO_ACTIVE_HIGH>;
+			default-state = "off";
+		};
+		led_eth0_link: eth0_link {
+			label = "eth0_link";
+			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+		};
+		led_eth1_link: eth1_link {
+			label = "eth1_link";
+			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+		};
 	};
 
 	keys {
